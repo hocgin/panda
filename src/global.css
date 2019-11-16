@@ -1,0 +1,19 @@
+:root {
+  --theme-color: #718096;
+  --box-border-color: #e2e2e2;
+  --box-background-color: #fff;
+  --background-color: #fff;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+}
+
+* {
+  transition: all .2s;
+}
