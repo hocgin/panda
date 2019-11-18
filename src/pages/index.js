@@ -25,6 +25,8 @@ class index extends React.Component {
   state = {
     showLeftPanel: false,
     selectedWorkspaceIndex: 0,
+    targetSelectedWorkspaceIndex: null,
+    showPasswordModal: false,
     inputWorkspacePassword: null,
     isSuccessPassword: false,
     useSearchEngine: null,
@@ -39,6 +41,7 @@ class index extends React.Component {
   render() {
     let { showLeftPanel, selectedWorkspaceIndex, isSuccessPassword, keyword } = this.state;
     let { workspaces = [], siteTop10 = [], workspaceTop10 = [], searchEngines = [] } = this.props;
+
     return (
       <div className={styles.pageWrapper}>
         {/*头部*/}
@@ -53,10 +56,12 @@ class index extends React.Component {
               dropdownMatchSelectWidth={false}
               size="large"
               autoFocus
-              backfill={true}
               style={{ width: '100%' }}
               value={keyword}
-              dataSource={searchEngines.map(({ name, query, image, hotKey }, index) => {
+              onChange={this.onChangeKeyword}
+              onSelect={this.onSelectOption}
+              onSearch={this.onSearch}
+              dataSource={this.getOptions().map(({ name, query, image, hotKey }, index) => {
                 return (
                   <Option key={index} keyword={keyword} className={styles.searchOption}>
                     <div>
@@ -66,14 +71,11 @@ class index extends React.Component {
                   </Option>
                 );
               })}
-              filterOption={this.filterOption}
-              onChange={this.onChangeKeyword}
-              onSelect={this.onSelectOption}
-              onSearch={this.onSearch}
               placeholder="搜索"
               optionLabelProp="keyword">
-              <Input suffix={<Button type="search"
-                                     onClick={this.onClickSearch}/>}/>
+              <Input type="text" suffix={<Button icon="search"
+                                                 type="dashed" shape="circle"
+                                                 onClick={this.onClickSearch}/>}/>
             </AutoComplete>
           </div>
         </div>
@@ -189,6 +191,7 @@ class index extends React.Component {
           </div>
         </div>
         <BackTop/>
+        {this.renderPasswordModal()}
       </div>
     );
   }
@@ -236,16 +239,35 @@ class index extends React.Component {
     let { selectedWorkspaceIndex } = this.state;
     idx = idx || selectedWorkspaceIndex;
     console.log('解锁完会跳到', idx);
-    Modal.confirm({
-      content: (<Input type="password"
-                       prefix={<Icon type="unlock"/>}
-                       onChange={this.onInputWorkspacePassword}
-                       placeholder="请输入密码"/>),
-      icon: null,
-      title: '请输入密码',
-      okText: '确认',
-      cancelText: '取消',
-      onOk: this.onConfirmWorkspacePassword.bind(this, idx),
+    this.setState({
+      targetSelectedWorkspaceIndex: idx,
+      showPasswordModal: true,
+    });
+  };
+
+  renderPasswordModal = () => {
+    let { showPasswordModal = false, inputWorkspacePassword } = this.state;
+    return (<Modal title="请输入密码"
+                   destroyOnClose
+                   okText="确认"
+                   cancelText="取消"
+                   zIndex={1051}
+                   mask={false}
+                   width={416}
+                   visible={showPasswordModal}
+                   onCancel={this.onCancelPasswordModal}
+                   onOk={this.onOkPasswordModal}>
+      <Input type="password"
+             value={inputWorkspacePassword}
+             prefix={<Icon type="lock"/>}
+             onChange={this.onInputWorkspacePassword}
+             placeholder="请输入密码"/>
+    </Modal>);
+  };
+
+  onCancelPasswordModal = () => {
+    this.setState({
+      showPasswordModal: false,
     });
   };
 
@@ -260,16 +282,17 @@ class index extends React.Component {
     });
   };
 
-  onConfirmWorkspacePassword = (idx) => {
+  onOkPasswordModal = () => {
     let { userConfigs: { password = null } } = this.props;
-    let { inputWorkspacePassword } = this.state;
+    let { inputWorkspacePassword, targetSelectedWorkspaceIndex } = this.state;
     let isSuccessPassword = (password === null || password === inputWorkspacePassword);
 
     if (isSuccessPassword) {
       this.setState({
         isSuccessPassword: true,
         inputWorkspacePassword: null,
-        selectedWorkspaceIndex: idx,
+        showPasswordModal: false,
+        selectedWorkspaceIndex: targetSelectedWorkspaceIndex,
       }, () => {
         message.success('已解锁');
       });
@@ -290,7 +313,7 @@ class index extends React.Component {
     let { searchEngines } = this.props;
 
     // 如果触发选择搜索引擎, ":xxx "
-    if (keyword.startsWith(':') && keyword.endsWith(' ')) {
+    if (`${keyword}`.startsWith(':') && `${keyword}`.endsWith(' ')) {
       let result = (searchEngines || []).findIndex(({ hotKey }) => {
         return `${hotKey}` === `${keyword}`.trim();
       });
@@ -357,34 +380,55 @@ class index extends React.Component {
     console.log('输入内容', v);
   };
 
-  filterOption = (keyword, { key }) => {
-    let { useSearchEngine } = this.state;
-    let { searchEngines = [] } = this.props;
-    // 如果有选中的搜索引擎
-    if (useSearchEngine !== null) {
-      // 如果和选中的一样
-      if (`${key}` === `${useSearchEngine}`) {
-        console.log('如果有选中的搜索引擎', '如果和选中的一样');
-        return true;
+  /**
+   * 构建 Options
+   * @returns {*[]}
+   */
+  getOptions = () => {
+    let { useSearchEngine, keyword } = this.state;
+    let { searchEngines } = this.props;
+
+    let result = searchEngines.filter((item, key) => {
+      // 如果有选中的搜索引擎
+      if (useSearchEngine !== null) {
+        // 如果和选中的一样
+        if (`${key}` === `${useSearchEngine}`) {
+          console.log('如果有选中的搜索引擎', '如果和选中的一样');
+          return true;
+        }
+
+        // 如果匹配符号":"
+        if (`${keyword}`.startsWith(':')) {
+          console.log('如果有选中的搜索引擎', '如果匹配符号":"');
+          return true;
+        }
       }
-    }
-    // 如果没有选中的搜索引擎
-    else {
-      // 如果没有匹配符号":"
-      if (!`${keyword}`.startsWith(':')) {
-        console.log('如果没有选中的搜索引擎', '如果没有匹配符号":"');
-        return true;
+      // 如果没有选中的搜索引擎
+      else {
+        // 如果没有匹配符号":"
+        if (!`${keyword}`.startsWith(':')) {
+          console.log('如果没有选中的搜索引擎', '如果没有匹配符号":"');
+          return true;
+        }
+
+        // 如果关键词匹配
+        if (`${searchEngines[key].hotKey}`.startsWith(keyword)) {
+          console.log('如果没有选中的搜索引擎', '如果关键词匹配');
+          return true;
+        }
       }
 
-      // 如果关键词匹配
-      if (`${searchEngines[key].hotKey}`.startsWith(keyword)) {
-        console.log('如果没有选中的搜索引擎', '如果关键词匹配');
-        return true;
-      }
+      return false;
+    });
+
+    if (result.length === 0) {
+      result = [...searchEngines];
     }
 
-    return false;
+    console.log('构建 Options', result);
+    return result;
   };
+
 }
 
 export default index;
