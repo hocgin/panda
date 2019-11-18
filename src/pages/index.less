@@ -21,9 +21,27 @@
 
   .searchWrapper {
     width: 60%;
+    .useSearchEngine {
+      font-size: .5em;
+    }
   }
 }
 
+.searchOption {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .searchEngineLogo {
+    display: flex;
+    max-width: 100px;
+    height: 20px;
+    align-items: center;
+    img {
+      justify-self: center;
+      height: 100%;
+    }
+  }
+}
 
 .selectBar {
   display: flex;
@@ -55,108 +73,108 @@
   display: flex;
   flex-direction: row;
 
-  .mainPanel {
-    @RowItemHeight: 30px;
-    background-color: #fff;
-    width: 100%;
+}
 
-    .panelRow {
-      margin: 10px 0;
-      position: relative;
-      display: flex;
-      align-items: center;
-      background-color: var(--box-background-color);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+.mainPanel {
+  margin-top: 10px;
+  @RowItemHeight: 30px;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
-      &:hover {
-        max-height: none;
+  .panelRow {
+    //border-bottom: 1px solid #f6f8f9;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
-        .title {
-          left: -100px;
+    &:hover {
+      max-height: none;
 
-          &:before {
-            content: "";
-            position: absolute;
-            width: 250px;
-            height: 15px;
-            background-color: rgba(255, 255, 255, 0.5);
-            transform: rotate(-45deg);
-            animation: lightning 1s ease-in 1s infinite;
+      .title {
+        left: -100px;
+        overflow: hidden;
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 250px;
+          height: 15px;
+          background-color: rgba(255, 255, 255, 0.5);
+          transform: rotate(-45deg);
+          animation: lightning 1s ease-in 1s infinite;
+        }
+
+        @keyframes lightning {
+          0% {
+            left: -120px;
+            top: 0;
           }
-
-          @keyframes lightning {
-            0% {
-              left: -120px;
-              top: 0;
-            }
-            to {
-              left: 120px;
-              top: 100px;
-            }
+          to {
+            left: 120px;
+            top: 100px;
           }
         }
       }
+    }
 
-      .title {
-        position: absolute;
-        top: 5px;
-        left: -15px;
-        z-index: -1;
-        display: flex;
-        align-items: center;
+    .title {
+      position: absolute;
+      top: 5px;
+      left: -15px;
+      z-index: -1;
+      display: flex;
+      align-items: center;
 
-        height: @RowItemHeight;
-        box-sizing: border-box;
-        padding: 0 12px;
-        border-radius: 3px;
-        color: #fff;
-        background: #718096;
-        box-shadow: 0 2px 0 rgba(170, 170, 170, 0.1);
-      }
+      height: @RowItemHeight;
+      box-sizing: border-box;
+      padding: 0 12px;
+      border-radius: 3px;
+      color: #fff;
+      background: #718096;
+      box-shadow: 0 2px 0 rgba(170, 170, 170, 0.1);
+    }
 
-      .sites {
-        position: relative;
-        top: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-top: 10px;
-      }
+    .sites {
+      position: relative;
+      top: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  }
+}
+
+.rightPanel {
+  box-sizing: border-box;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+
+  &.show {
+    width: 280px;
+    height: unset;
+  }
+
+  .box {
+    font-size: 13px;
+    margin: 0 0 0 10px;
+    text-align: left;
+
+    .boxDivider {
+      margin-bottom: 0;
+    }
+
+    .boxTitle {
+      padding-left: 5px;
     }
   }
 
-  .rightPanel {
-    box-sizing: border-box;
-    flex-direction: column;
-    display: flex;
-    overflow: hidden;
-    width: 0;
-    height: 0;
-
-    &.show {
-      width: 280px;
-      height: unset;
-    }
-
-    background-color: #fff;
-
-    .box {
-      margin: 10px 0 10px 10px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
-      background-color: var(--box-background-color);
-      text-align: left;
-
-      .boxDivider {
-        margin-bottom: 0;
-      }
-
-      .boxTitle {
-        padding-left: 5px;
-      }
-    }
-
-  }
 }
 
 .siteWrapper {
@@ -187,11 +205,10 @@
       align-items: center;
 
       .siteLogo {
-        width: 24px;
-        height: 24px;
-        border-radius: 12px;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 1);
 
         img {
           width: 100%;

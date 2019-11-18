@@ -1,0 +1,6 @@
+[{
+  "name": "百度",
+  "image": "Logo",
+  "hotKey": "C",
+  "query": "https://www.baidu.com?q={word}"
+}]

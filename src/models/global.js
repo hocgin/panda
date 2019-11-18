@@ -9,6 +9,7 @@ export default {
     workspaces: [],
     siteTop10: [],
     workspaceTop10: [],
+    searchEngines: [],
     userConfigs: {},
   },
 
@@ -43,6 +44,16 @@ export default {
         });
       }
     },
+    * fetchSearchEngines(_, { call, put, select }) {
+      const result = yield call(API.getSearchEngines);
+
+      if (Util.isOk(result)) {
+        yield put({
+          type: 'changeSearchEngines',
+          payload: result.data || [],
+        });
+      }
+    },
   },
 
   reducers: {
@@ -64,6 +75,12 @@ export default {
         siteTop10: payload,
       };
     },
+    changeSearchEngines(state, { payload }) {
+      return {
+        ...state,
+        searchEngines: payload,
+      };
+    },
   },
 
   subscriptions: {
@@ -83,6 +100,10 @@ export default {
             });
             dispatch({
               type: 'fetchWorkspaceTop10',
+              payload: {},
+            });
+            dispatch({
+              type: 'fetchSearchEngines',
               payload: {},
             });
           }

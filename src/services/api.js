@@ -13,7 +13,6 @@ export default class API {
   }
 
   static getWorkspaces(payload) {
-
     let query = stringify(payload);
     return request(`/workspaces?${query}`, {
       method: 'GET',
@@ -21,7 +20,6 @@ export default class API {
   }
 
   static getSiteTop10(payload) {
-
     let query = stringify(payload);
     return request(`/site/top10?${query}`, {
       method: 'GET',
@@ -29,9 +27,15 @@ export default class API {
   }
 
   static getWorkspaceTop10(payload) {
-
     let query = stringify(payload);
     return request(`/workspace/top10?${query}`, {
+      method: 'GET',
+    });
+  }
+
+  static getSearchEngines(payload) {
+    let query = stringify(payload);
+    return request(`/search-engines?${query}`, {
       method: 'GET',
     });
   }
