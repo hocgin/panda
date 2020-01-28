@@ -31,6 +31,7 @@ class index extends React.Component {
     isSuccessPassword: false,
     useSearchEngine: null,
     keyword: null,
+    nightMode: true
   };
 
   constructor() {
