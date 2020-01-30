@@ -6,39 +6,17 @@ export default {
   namespace: 'global',
 
   state: {
-    workspaces: [],
-    siteTop10: [],
-    workspaceTop10: [],
+    siteGroup: [],
     userConfigs: {},
   },
 
   effects: {
-    * fetchWorkspaces(_, { call, put, select }) {
-      const result = yield call(API.getWorkspaces);
+    * fetchSiteGroup(_, { call, put, select }) {
+      const result = yield call(API.getWebsites);
 
       if (Util.isOk(result)) {
         yield put({
-          type: 'changeWorkspaces',
-          payload: result.data || [],
-        });
-      }
-    },
-    * fetchSiteTop10(_, { call, put, select }) {
-      const result = yield call(API.getSiteTop10);
-
-      if (Util.isOk(result)) {
-        yield put({
-          type: 'changeSiteTop10',
-          payload: result.data || [],
-        });
-      }
-    },
-    * fetchWorkspaceTop10(_, { call, put, select }) {
-      const result = yield call(API.getWorkspaceTop10);
-
-      if (Util.isOk(result)) {
-        yield put({
-          type: 'changeWorkspaceTop10',
+          type: 'changeSiteGroup',
           payload: result.data || [],
         });
       }
@@ -46,22 +24,10 @@ export default {
   },
 
   reducers: {
-    changeWorkspaces(state, { payload }) {
+    changeSiteGroup(state, { payload }) {
       return {
         ...state,
-        workspaces: payload,
-      };
-    },
-    changeWorkspaceTop10(state, { payload }) {
-      return {
-        ...state,
-        workspaceTop10: payload,
-      };
-    },
-    changeSiteTop10(state, { payload }) {
-      return {
-        ...state,
-        siteTop10: payload,
+        siteGroup: payload,
       };
     },
   },
@@ -74,15 +40,7 @@ export default {
           case '/':
           default: {
             dispatch({
-              type: 'fetchWorkspaces',
-              payload: {},
-            });
-            dispatch({
-              type: 'fetchSiteTop10',
-              payload: {},
-            });
-            dispatch({
-              type: 'fetchWorkspaceTop10',
+              type: 'fetchSiteGroup',
               payload: {},
             });
           }

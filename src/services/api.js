@@ -1,5 +1,6 @@
 import request from '@/utils/request';
 import { stringify } from 'qs';
+import websites from '@/services/websites';
 
 export default class API {
 
@@ -12,28 +13,11 @@ export default class API {
     });
   }
 
-  static getWorkspaces(payload) {
-
-    let query = stringify(payload);
-    return request(`/workspaces?${query}`, {
-      method: 'GET',
-    });
+  static getWebsites() {
+    return {
+      code: 200,
+      message: 'ok',
+      data: websites,
+    };
   }
-
-  static getSiteTop10(payload) {
-
-    let query = stringify(payload);
-    return request(`/site/top10?${query}`, {
-      method: 'GET',
-    });
-  }
-
-  static getWorkspaceTop10(payload) {
-
-    let query = stringify(payload);
-    return request(`/workspace/top10?${query}`, {
-      method: 'GET',
-    });
-  }
-
 }
