@@ -17,6 +17,7 @@ class Index extends React.PureComponent {
     return (
       <div className={classnames(styles.component, wrapperClassName, {
         [styles.inputed]: hasKeyword,
+        [styles.autocompleted]: hasAutocomplete,
       })}>
         <div className={styles.logoWrapper}>
           <a href="#" className={styles.logo}/>
@@ -34,8 +35,9 @@ class Index extends React.PureComponent {
           <div className={classnames(styles.autocomplete, {
             [styles.show]: hasAutocomplete,
           })}>
-            {(autocomplete).map(({ phrase }) =>
-              (<div className={styles.autocompleteItem} onClick={that.onClickAutocomplete.bind(that, phrase)}>{phrase}</div>),
+            {(autocomplete).map(({ phrase }, index) =>
+              (<div key={index} className={styles.autocompleteItem}
+                    onClick={that.onClickAutocomplete.bind(that, phrase)}>{phrase}</div>),
             )}
           </div>
         </form>

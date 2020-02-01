@@ -22,16 +22,17 @@ export default class API {
         name: 'autocompleteCallback',
       }, (err, data) => {
         if (!!err) {
-          reject(err);
+          console.error('[请求出现异常]', err);
+          resolve([]);
         } else {
           resolve(data);
         }
       });
     }).then((response) => {
-      console.log('response', JSON.stringify(response));
       return response;
     }).catch((e) => {
       console.log('[请求出现异常]', e);
+      return [];
     });
   }
 

@@ -17,6 +17,8 @@
   .input {
     padding-left: 12px;
     width: 100%;
+    font-size: 1.1em;
+    color: #222;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06);
@@ -99,17 +101,11 @@
   }
 }
 
+// 正在输入
 .inputed {
   .input {
-    box-shadow: none;
-    //border-bottom-width: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
   }
 
-  .btns {
-    border-bottom-right-radius: 0;
-  }
 
   .autocomplete {
     border-radius: 0 0 4px 4px;
@@ -122,6 +118,19 @@
   .submit {
     background-color: @primaryColor;
     color: #fff;
+  }
+}
+
+// 有提示内容
+.autocompleted {
+  .input {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none;
+  }
+
+  .btns {
+    border-bottom-right-radius: 0;
   }
 }
 
