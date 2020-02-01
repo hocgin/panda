@@ -33,11 +33,14 @@
     }
   }
 }
+
 .imageWrapper {
   margin-right: 8px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+  background-color: rgba(255, 255, 255, .5);
+
   .image {
     width: 45px;
     height: 45px;
@@ -65,12 +68,16 @@
   text-align: left;
   flex-direction: column;
   justify-content: space-around;
+
   .title {
     font-size: 16px;
     font-weight: 400;
     color: rgba(48, 54, 89, 0.9);
-    .dark({color: #A4A5A6})
+    .dark({
+      color: #A4A5A6
+    })
   }
+
   .desc {
     color: rgba(136, 142, 162, 0.96);
     font-size: 12px;

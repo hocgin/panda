@@ -2,6 +2,7 @@ import styles from './index.less';
 import { BackTop } from 'antd';
 import * as React from 'react';
 import CardsRow from '@/components/CardsRow';
+import SearchBar from '@/components/SearchBar';
 import { connect } from 'dva';
 
 @connect(({ global: { siteGroup }, loading }) => {
@@ -17,6 +18,7 @@ class index extends React.Component {
     let { siteGroup } = this.props;
     return (
       <div className={styles.pageWrapper}>
+        <SearchBar/>
         {(siteGroup).map(({ title = '', websites = [] }) => (<CardsRow title={title} websites={websites}/>))}
         <BackTop/>
       </div>
