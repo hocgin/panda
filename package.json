@@ -12,6 +12,7 @@
     "classnames": "^2.2.6",
     "dva": "^2.6.0-beta.6",
     "hash.js": "latest",
+    "jsonp": "^0.2.1",
     "mockjs": "^1.1.0",
     "moment": "^2.24.0",
     "qs": "^6.9.1",

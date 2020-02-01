@@ -1,5 +1,11 @@
 @import "~@/mixin.less";
 
+html, body {
+  .dark({
+    background-color: #030303;
+  });
+}
+
 .wrapper {
   width: 1100px;
   margin: 0 auto;
@@ -15,7 +21,7 @@
   });
 
   .dark({
-    background-color: #030303;
+    background-color: @darkBackgroundColor;
   });
 }
 
@@ -31,9 +37,11 @@
       color: #F22E3C;
       margin: 0 10px;
     }
+
     .me {
       .a();
     }
+
     .year {
       .a();
       border-bottom: none;

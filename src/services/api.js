@@ -1,6 +1,7 @@
 import request from '@/utils/request';
-import { stringify } from 'qs';
 import websites from '@/services/websites';
+import jsonp from 'jsonp';
+import { stringify } from 'qs';
 
 export default class API {
 
@@ -10,6 +11,27 @@ export default class API {
       body: {
         ...payload,
       },
+    });
+  }
+
+  static getAutocomplete(payload) {
+    let queryStr = stringify(payload);
+    return new Promise((resolve, reject) => {
+      jsonp(`https://duckduckgo.com/ac/?${queryStr}`, {
+        param: 'callback',
+        name: 'autocompleteCallback',
+      }, (err, data) => {
+        if (!!err) {
+          reject(err);
+        } else {
+          resolve(data);
+        }
+      });
+    }).then((response) => {
+      console.log('response', JSON.stringify(response));
+      return response;
+    }).catch((e) => {
+      console.log('[请求出现异常]', e);
     });
   }
 

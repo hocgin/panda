@@ -8,6 +8,7 @@ export default {
   state: {
     siteGroup: [],
     userConfigs: {},
+    autocomplete: [],
   },
 
   effects: {
@@ -21,6 +22,13 @@ export default {
         });
       }
     },
+    * fetchAutocomplete({ payload }, { call, put, select }) {
+      const result = yield call(API.getAutocomplete, payload);
+      yield put({
+        type: 'changeAutocomplete',
+        payload: result || [],
+      });
+    },
   },
 
   reducers: {
@@ -28,6 +36,12 @@ export default {
       return {
         ...state,
         siteGroup: payload,
+      };
+    },
+    changeAutocomplete(state, { payload }) {
+      return {
+        ...state,
+        autocomplete: payload,
       };
     },
   },
