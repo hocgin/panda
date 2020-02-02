@@ -1,0 +1,22 @@
+[
+  {
+    "title": "DuckDuckGo",
+    "logo": "duckduckgo",
+    "url": "https://duckduckgo.com/?q=${query}"
+  },
+  {
+    "title": "搜狗搜索",
+    "logo": "sogou",
+    "url": "https://www.sogou.com/web?query=${query}"
+  },
+  {
+    "title": "百度搜索",
+    "logo": "baidu",
+    "url": "https://www.baidu.com/s?wd=${query}"
+  },
+  {
+    "title": "Google",
+    "logo": "google",
+    "url": "https://www.google.com/search?q=${query}"
+  }
+]
