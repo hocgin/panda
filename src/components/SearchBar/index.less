@@ -1,0 +1,147 @@
+@import "~@/mixin.less";
+
+.component {
+  .mobile({
+    padding: 0 20px;
+  });
+
+}
+
+.search {
+  width: 100%;
+  flex: 1 0 auto;
+  max-width: 665px;
+  margin: 0 auto;
+  position: relative;
+
+  .input {
+    padding-left: 12px;
+    width: 100%;
+    font-size: 1.1em;
+    color: #222;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 2.8em;
+    vertical-align: baseline;
+    outline: none;
+    .dark({
+      color: #A4A5A6;
+      background-color: @dark2ndBackgroundColor;
+    });
+  }
+
+  .btns {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    border-radius: 0 4px 4px 0;
+    overflow: hidden;
+
+    * {
+      transition: unset;
+    }
+  }
+
+  .submit {
+    border: none;
+    height: 100%;
+    padding: 0 1em;
+    font-size: 1.25em;
+    outline: none;
+    background-color: transparent;
+    color: #999;
+  }
+
+  .clean {
+    border: none;
+    height: 100%;
+    padding: 0 1em;
+    background: transparent;
+    text-align: center;
+    box-sizing: content-box;
+    outline: none;
+    display: none;
+  }
+
+  .autocomplete {
+    position: absolute;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-height: 230px;
+    display: none;
+    background-color: #fff;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-top-width: 0;
+
+    &.show {
+      display: block;
+    }
+
+    .dark({
+      color: #A4A5A6;
+      background-color: @dark2ndBackgroundColor;
+    });
+
+    .autocompleteItem {
+      padding: 10px 12px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+// 正在输入
+.inputed {
+  .input {
+  }
+
+
+  .autocomplete {
+    border-radius: 0 0 4px 4px;
+  }
+
+  .clean {
+    display: inline-block;
+  }
+
+  .submit {
+    background-color: @primaryColor;
+    color: #fff;
+  }
+}
+
+// 有提示内容
+.autocompleted {
+  .input {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none;
+  }
+
+  .btns {
+    border-bottom-right-radius: 0;
+  }
+}
+
+.logoWrapper {
+  .logo {
+    margin: 0 auto 20px;
+    width: 205px;
+    height: 56px;
+    display: block;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("https://duckduckgo.com/assets/logo_homepage_mobile.normal.v108.unoptimized.svg");
+  }
+}

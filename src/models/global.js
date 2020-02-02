@@ -6,62 +6,42 @@ export default {
   namespace: 'global',
 
   state: {
-    workspaces: [],
-    siteTop10: [],
-    workspaceTop10: [],
+    siteGroup: [],
     userConfigs: {},
+    autocomplete: [],
   },
 
   effects: {
-    * fetchWorkspaces(_, { call, put, select }) {
-      const result = yield call(API.getWorkspaces);
+    * fetchSiteGroup(_, { call, put, select }) {
+      const result = yield call(API.getWebsites);
 
       if (Util.isOk(result)) {
         yield put({
-          type: 'changeWorkspaces',
+          type: 'changeSiteGroup',
           payload: result.data || [],
         });
       }
     },
-    * fetchSiteTop10(_, { call, put, select }) {
-      const result = yield call(API.getSiteTop10);
-
-      if (Util.isOk(result)) {
-        yield put({
-          type: 'changeSiteTop10',
-          payload: result.data || [],
-        });
-      }
-    },
-    * fetchWorkspaceTop10(_, { call, put, select }) {
-      const result = yield call(API.getWorkspaceTop10);
-
-      if (Util.isOk(result)) {
-        yield put({
-          type: 'changeWorkspaceTop10',
-          payload: result.data || [],
-        });
-      }
+    * fetchAutocomplete({ payload }, { call, put, select }) {
+      const result = yield call(API.getAutocomplete, payload);
+      yield put({
+        type: 'changeAutocomplete',
+        payload: result || [],
+      });
     },
   },
 
   reducers: {
-    changeWorkspaces(state, { payload }) {
+    changeSiteGroup(state, { payload }) {
       return {
         ...state,
-        workspaces: payload,
+        siteGroup: payload,
       };
     },
-    changeWorkspaceTop10(state, { payload }) {
+    changeAutocomplete(state, { payload }) {
       return {
         ...state,
-        workspaceTop10: payload,
-      };
-    },
-    changeSiteTop10(state, { payload }) {
-      return {
-        ...state,
-        siteTop10: payload,
+        autocomplete: payload,
       };
     },
   },
@@ -74,15 +54,7 @@ export default {
           case '/':
           default: {
             dispatch({
-              type: 'fetchWorkspaces',
-              payload: {},
-            });
-            dispatch({
-              type: 'fetchSiteTop10',
-              payload: {},
-            });
-            dispatch({
-              type: 'fetchWorkspaceTop10',
+              type: 'fetchSiteGroup',
               payload: {},
             });
           }

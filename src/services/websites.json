@@ -1,0 +1,77 @@
+[
+  {
+    "title": "设计🦁️",
+    "websites": [
+      {
+        "title": "Dribbble",
+        "desc": "搜索引擎",
+        "src": "https://cdn.dribbble.com/assets/favicon-63b2904a073c89b52b19aa08cebc16a154bcf83fee8ecc6439968b1e6db569c7.ico",
+        "href": "https://www.dribbble.com"
+      },
+      {
+        "title": "Easyicon",
+        "desc": "图片搜索引擎",
+        "src": "https://cdn-img.easyicon.net/image/2019/panda-index.svg",
+        "href": "https://www.easyicon.net"
+      },
+      {
+        "title": "Feather",
+        "desc": "简单漂亮的开源图标",
+        "src": "https://feathericons.com/favicon-32x32.png",
+        "href": "https://feathericons.com"
+      }
+    ]
+  },
+  {
+    "title": "ACG",
+    "websites": [
+      {
+        "title": "漫画柜",
+        "desc": "在线漫画",
+        "src": "https://www.manhuagui.com/favicon.ico",
+        "href": "https://www.manhuagui.com/"
+      }
+    ]
+  },
+  {
+    "title": "工具类️",
+    "websites": [
+      {
+        "title": "Tinypng",
+        "desc": ".png,.jpg 图片压缩",
+        "src": "https://tinypng.com/images/apple-touch-icon.png",
+        "href": "https://tinypng.com/"
+      },
+      {
+        "title": "Greasy Fork",
+        "desc": "Tampermonkey 脚本搜索",
+        "src": "https://greasyfork.org/assets/blacklogo96-e0c2c76180916332b7516ad47e1e206b42d131d36ff4afe98da3b1ba61fd5d6c.png",
+        "href": "https://greasyfork.org/"
+      },
+      {
+        "title": "';--have i been pwned?",
+        "desc": "检查邮箱是否安全",
+        "src": "https://haveibeenpwned.com/favicon.ico",
+        "href": "https://haveibeenpwned.com/"
+      },
+      {
+        "title": "SOCIALBLADE",
+        "desc": "Youtuber 营收分析",
+        "src": "https://socialblade.com/images/share-badge.png",
+        "href": "https://socialblade.com"
+      },
+      {
+        "title": "Tonymacx86",
+        "desc": "黑苹果社区",
+        "src": "https://www.tonymacx86.com/images/tonymacx86-logo.png",
+        "href": "https://www.tonymacx86.com/"
+      },
+      {
+        "title": "识字体",
+        "desc": "识别图片所使用的字体",
+        "src": "https://www.likefont.com/favicon.ico",
+        "href": "https://www.likefont.com/"
+      }
+    ]
+  }
+]

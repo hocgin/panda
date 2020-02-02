@@ -1,5 +1,31 @@
 @import "~@/theme.less";
-@import "~@/adaptation.less";
+@import "~@/dark.less";
+
+/**
+ * ============
+ * 通用配置或样式
+ * ============
+ **/
+@fontColor: rgba(0, 0, 0, 0.65);
+@primaryColor: #da5040;
+@darkBackgroundColor: #030303;
+@dark2ndBackgroundColor: #212121;
+
+.mobile(@rules) {
+  @media only screen and (max-width: 800px) {
+    @rules();
+  }
+}
+.dark(@rules) {
+  @media (prefers-color-scheme: dark) {
+    @rules();
+  }
+}
+
+/**
+ * ============
+ * ============
+ **/
 
 .heartbeat {
   display: inline-block;
@@ -37,27 +63,28 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   overflow: hidden;
-  -webkit-line-clamp: 2!important;
+  -webkit-line-clamp: 2 !important;
   /* autoprefixer: off */
-  -webkit-box-orient: vertical!important;
+  -webkit-box-orient: vertical !important;
   /* autoprefixer: on */
 }
 
 // 文字一行+省略号
-.oneLine(){
+.oneLine() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 // 背景图片居中显示
-.centerBackground(){
+.centerBackground() {
   background: no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
 }
-.a(){
+
+.a() {
   border-bottom: 4px solid #e2e8f0;
   text-decoration: inherit;
   box-sizing: inherit;
