@@ -1,7 +1,20 @@
 import { message } from 'antd';
 import moment from 'moment';
+import duckduckgo from '@/assets/duckduckgo.svg';
+import sogou from '@/assets/sogou.png';
+import baidu from '@/assets/baidu.png';
+import google from '@/assets/google.png';
 
 export default class Util {
+
+  static getSearchLogo() {
+    return {
+      'duckduckgo': duckduckgo,
+      'sogou': sogou,
+      'baidu': baidu,
+      'google': google,
+    };
+  }
 
   /**
    * 自动输出第一条错误信息

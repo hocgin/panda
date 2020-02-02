@@ -2,6 +2,15 @@ import hash from 'hash.js';
 
 export default class Storage {
   static KEY_LAST_WEBSITE_MAPS = 'KEY_LAST_WEBSITE_MAPS';
+  static KEY_ACTIVE_INT = 'KEY_LAST_ACTIVE_INT';
+
+  static getActive() {
+    return parseInt(Storage.getItem(Storage.KEY_ACTIVE_INT) || 0);
+  }
+
+  static setActive(active) {
+    Storage.setItem(Storage.KEY_ACTIVE_INT, active);
+  }
 
   static getLastWebsiteMap() {
     return Storage.getItem(Storage.KEY_LAST_WEBSITE_MAPS) || {
@@ -28,7 +37,7 @@ export default class Storage {
   }
 
   static setItem(key, value) {
-    if (!value) {
+    if (value === null || value === undefined) {
       return;
     }
     console.debug('[Storage]存储:', key, JSON.stringify(value));

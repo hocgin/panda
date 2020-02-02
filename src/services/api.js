@@ -1,5 +1,6 @@
 import request from '@/utils/request';
-import websites from '@/services/websites';
+import website from '@/services/website';
+import searchEngine from '@/services/search-engine';
 import jsonp from 'jsonp';
 import { stringify } from 'qs';
 
@@ -40,7 +41,15 @@ export default class API {
     return {
       code: 200,
       message: 'ok',
-      data: websites,
+      data: website,
+    };
+  }
+
+  static getSearchEngine() {
+    return {
+      code: 200,
+      message: 'ok',
+      data: searchEngine,
     };
   }
 }

@@ -7,6 +7,7 @@ export default {
 
   state: {
     siteGroup: [],
+    searchEngine: [],
     userConfigs: {},
     autocomplete: [],
   },
@@ -18,6 +19,16 @@ export default {
       if (Util.isOk(result)) {
         yield put({
           type: 'changeSiteGroup',
+          payload: result.data || [],
+        });
+      }
+    },
+    * fetchSearchEngine(_, { call, put, select }) {
+      const result = yield call(API.getSearchEngine);
+
+      if (Util.isOk(result)) {
+        yield put({
+          type: 'changeSearchEngine',
           payload: result.data || [],
         });
       }
@@ -44,6 +55,12 @@ export default {
         autocomplete: payload,
       };
     },
+    changeSearchEngine(state, { payload }) {
+      return {
+        ...state,
+        searchEngine: payload,
+      };
+    },
   },
 
   subscriptions: {
@@ -55,6 +72,10 @@ export default {
           default: {
             dispatch({
               type: 'fetchSiteGroup',
+              payload: {},
+            });
+            dispatch({
+              type: 'fetchSearchEngine',
               payload: {},
             });
           }

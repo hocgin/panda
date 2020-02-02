@@ -6,9 +6,10 @@ import SearchBar from '@/components/SearchBar';
 import Storage from '@/utils/storage';
 import { connect } from 'dva';
 
-@connect(({ global: { siteGroup, autocomplete = [] }, loading }) => {
+@connect(({ global: { siteGroup, searchEngine = [], autocomplete = [] }, loading }) => {
   return {
     siteGroup: siteGroup,
+    searchEngine: searchEngine,
     autocomplete: autocomplete,
   };
 }, dispatch => ({
@@ -19,11 +20,12 @@ class index extends React.Component {
 
   render() {
     let {} = this.state;
-    let { siteGroup, autocomplete } = this.props;
+    let { siteGroup, autocomplete, searchEngine } = this.props;
     let lastWebsites = this.getLastWebsites();
     return (
       <div className={styles.pageWrapper}>
         <SearchBar wrapperClassName={styles.searchBar}
+                   searchEngine={searchEngine}
                    autocomplete={autocomplete}
                    onChangeKeyword={this.onChangeKeyword}/>
         {lastWebsites.length > 0 && <CardsRow title={'最近访问'} websites={lastWebsites}/>}

@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './index.less';
 import { Icon } from 'antd';
+import Swiper from '@/components/Swiper';
 import classnames from 'classnames';
+import Util from '@/utils/util';
+import Storage from '@/utils/storage';
 
 class Index extends React.PureComponent {
   state = {
@@ -9,7 +12,7 @@ class Index extends React.PureComponent {
   };
 
   render() {
-    let { autocomplete = [], wrapperClassName } = this.props;
+    let { autocomplete = [], searchEngine = [], wrapperClassName } = this.props;
     let { keyword } = this.state;
     let hasKeyword = !!`${keyword}`.length;
     let hasAutocomplete = hasKeyword && autocomplete.length;
@@ -20,7 +23,8 @@ class Index extends React.PureComponent {
         [styles.autocompleted]: hasAutocomplete,
       })}>
         <div className={styles.logoWrapper}>
-          <a href="#" className={styles.logo}/>
+          <Swiper images={this.getImages()} active={this.getActive()} onChange={this.onChangeSearchEngine}/>
+          {/*<a href="#" className={styles.logo}/>*/}
         </div>
         <form className={styles.search} action={'#'}>
           <input type="text" autoCorrect="off" autoComplete="off" autoCapitalize="off"
@@ -45,6 +49,19 @@ class Index extends React.PureComponent {
     );
   }
 
+  getActive = () => {
+    return Storage.getActive();
+  };
+
+  setActive = (active) => {
+    Storage.setActive(active);
+  };
+
+  getImages = () => {
+    let { searchEngine } = this.props;
+    return (searchEngine || []).map(({ logo }) => `${Util.getSearchLogo()[logo]}`);
+  };
+
   onClickClean = () => {
     this.setState({
       keyword: '',
@@ -64,7 +81,6 @@ class Index extends React.PureComponent {
     this.setState({
       keyword,
     });
-    console.log('点击', keyword);
     this.openSearchResult(keyword);
   };
 
@@ -73,11 +89,19 @@ class Index extends React.PureComponent {
     this.openSearchResult(keyword);
   };
 
+  onChangeSearchEngine = (index) => {
+    this.setActive(index);
+  };
+
   openSearchResult = (query) => {
+    let { searchEngine } = this.props;
+    let active = this.getActive();
     if (!query) {
       return;
     }
-    window.open(`https://duckduckgo.com/?q=${query}`, '_blank');
+    let searchEngineUrl = searchEngine[active].url;
+    let url = `${searchEngineUrl}`.replace('${query}', query);
+    window.open(url, '_blank');
   };
 }
 
