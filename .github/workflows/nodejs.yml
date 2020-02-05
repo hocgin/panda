@@ -12,15 +12,27 @@ jobs:
         node-version: [8.x, 10.x, 12.x]
 
     steps:
+    - name: Checkout Actions
     - uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run build
-    - run: git add docs/*
-    - run: git commit -m '部署更新'
-    - run: git push
-      env:
-        CI: true
+
+    - name: Dependent & Build
+    - run: |
+        npm install
+        npm run build
+
+    - name: Commit
+    - run: |
+        git config --global user.email hocgin@gmail.com
+        git config --global user.name hocgin
+        git add docs/*
+        git commit -m '部署' -a
+
+    - name: Push
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
