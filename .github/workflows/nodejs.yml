@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: umi build
+    - run: npm run build
     - run: git add docs/*
     - run: git commit -m '部署更新'
     - run: git push
