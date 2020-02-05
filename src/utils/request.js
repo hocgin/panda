@@ -63,7 +63,7 @@ export default function request(
         // 响应状态检查
         .then((response) => {
             if (Config.isDev()) {
-                console.log(`${response.status}:[请求地址]:${response.url}`);
+                console.debug(`${response.status}:[请求地址]:${response.url}`);
             }
             if (response.status >= 200 && response.status < 500) {
                 return response;
@@ -79,7 +79,7 @@ export default function request(
         })
         // 异常响应处理
         .catch((e) => {
-            console.log('[请求出现异常]', e);
+            console.error('[请求出现异常]', e);
         });
 };
 

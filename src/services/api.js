@@ -32,7 +32,7 @@ export default class API {
     }).then((response) => {
       return response;
     }).catch((e) => {
-      console.log('[请求出现异常]', e);
+      console.error('[请求出现异常]', e);
       return [];
     });
   }
