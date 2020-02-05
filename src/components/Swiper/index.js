@@ -5,7 +5,6 @@ import Swiper from 'react-id-swiper';
 
 class Index extends React.PureComponent {
   state = {
-    active: 0,
     keyword: '',
     swiper: null,
   };
@@ -14,17 +13,18 @@ class Index extends React.PureComponent {
   constructor(...args) {
     super(args);
     let { active, onChange } = args[0];
-    console.log('props', args, active, onChange);
 
     this.gallerySwiperParams = {
       slidesPerView: 1,
       centeredSlides: true,
-      activeSlideKey: `${active}`,
       getSwiper: obj => {
         if (this.state && !this.state.swiper) {
           this.setState({
             swiper: obj,
           });
+          if (active) {
+            obj.slideTo(active);
+          }
         }
       },
       on: {

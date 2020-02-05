@@ -5,7 +5,7 @@ export default class Storage {
   static KEY_ACTIVE_INT = 'KEY_LAST_ACTIVE_INT';
 
   static getActive() {
-    return parseInt(Storage.getItem(Storage.KEY_ACTIVE_INT) || 0);
+    return parseInt(Storage.getItem(Storage.KEY_ACTIVE_INT));
   }
 
   static setActive(active) {
@@ -13,7 +13,7 @@ export default class Storage {
   }
 
   static getLastWebsiteMap() {
-    return Storage.getItem(Storage.KEY_LAST_WEBSITE_MAPS) || {
+    return Storage.getItemUseJson(Storage.KEY_LAST_WEBSITE_MAPS) || {
       // hash: {index: 1, value: {}}
     };
   }
@@ -33,20 +33,31 @@ export default class Storage {
         value: item,
       };
     }
-    Storage.setItem(Storage.KEY_LAST_WEBSITE_MAPS, all);
+    Storage.setItemUseJson(Storage.KEY_LAST_WEBSITE_MAPS, all);
   }
 
+
+  // ----
   static setItem(key, value) {
     if (value === null || value === undefined) {
       return;
     }
-    console.debug('[Storage]存储:', key, JSON.stringify(value));
-    localStorage.setItem(key, JSON.stringify(value));
+    console.debug('[Storage]SET:', key, value);
+    localStorage.setItem(key, value);
   }
 
   static getItem(key) {
     let result = localStorage.getItem(key);
-    console.debug('[Storage]获取:', key, JSON.parse(result));
+    console.debug('[Storage]GET:', key, result);
+    return result;
+  }
+
+  static setItemUseJson(key, value) {
+    this.setItem(key, JSON.stringify(value));
+  }
+
+  static getItemUseJson(key) {
+    let result = this.getItem(key);
     try {
       return JSON.parse(result);
     } catch (e) {
