@@ -5,13 +5,12 @@ import Swiper from 'react-id-swiper';
 
 class Index extends React.PureComponent {
   state = {
-    keyword: '',
     swiper: null,
   };
   gallerySwiperParams = {};
 
   constructor(...args) {
-    super(args);
+    super(...args);
     let { active, onChange } = args[0];
 
     this.gallerySwiperParams = {
