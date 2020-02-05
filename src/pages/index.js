@@ -19,7 +19,6 @@ class index extends React.Component {
   state = {};
 
   render() {
-    let {} = this.state;
     let { siteGroup, autocomplete, searchEngine } = this.props;
     let lastWebsites = this.getLastWebsites();
     return (
