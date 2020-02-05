@@ -21,7 +21,7 @@ class Index extends React.PureComponent {
   }
 
   openUrl = (item) => {
-    let { title, src, desc, href } = item;
+    let { href } = item;
     if (!href) {
       return;
     }

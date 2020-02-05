@@ -12,7 +12,7 @@ class Index extends React.PureComponent {
   };
 
   render() {
-    let { autocomplete = [], searchEngine = [], wrapperClassName } = this.props;
+    let { autocomplete = [], wrapperClassName } = this.props;
     let { keyword } = this.state;
     let hasKeyword = !!`${keyword}`.length;
     let hasAutocomplete = hasKeyword && autocomplete.length;

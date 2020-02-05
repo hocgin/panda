@@ -41,7 +41,7 @@ class Index extends React.PureComponent {
   }
 
   render() {
-    let { images, onChange } = this.props;
+    let { images } = this.props;
 
     return (<div className={styles.component}>
       <div className={styles.gallery}>
