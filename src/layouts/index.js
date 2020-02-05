@@ -12,7 +12,7 @@ function BasicLayout(props) {
           <Icon type="heart" theme="filled" className={classnames(styles.heartbeat, styles.heart)}/>
           <a className={styles.me} href="https://hocg.in" target="_blank">HOCGIN</a>
           &nbsp;
-          <span className={styles.year}>2019<sup>&copy;</sup></span>
+          <span className={styles.year}>2020<sup>&copy;</sup></span>
         </div>
       </div>
     </div>
