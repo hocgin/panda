@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.less';
-import { Icon } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 import Swiper from '@/components/Swiper';
 import classnames from 'classnames';
 import Util from '@/utils/util';
@@ -34,7 +34,7 @@ class Index extends React.PureComponent {
                  className={styles.input}/>
           <div className={styles.btns}>
             <input type="button" className={classnames(styles.clean)} value="X" onClick={this.onClickClean}/>
-            <button type="submit" className={styles.submit} onClick={this.onClickSearch}><Icon type="search"/></button>
+            <button type="submit" className={styles.submit} onClick={this.onClickSearch}><SearchOutlined /></button>
           </div>
           <div className={classnames(styles.autocomplete, {
             [styles.show]: hasAutocomplete,
