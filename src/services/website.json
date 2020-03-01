@@ -1,12 +1,37 @@
 [
   {
     "title": "持续学习📖",
-    "websites": [{
-      "title": "VoiceTube",
-      "desc": "看视频学英语",
-      "src": "https://cdn.voicetube.com/assets/img/logo/vt-fb-logo.png",
-      "href": "https://www.voicetube.com/"
-    }]
+    "websites": [
+      {
+        "title": "VoiceTube",
+        "desc": "看视频学英语",
+        "src": "https://cdn.voicetube.com/assets/img/logo/vt-fb-logo.png",
+        "href": "https://www.voicetube.com/"
+      }
+    ]
+  },
+  {
+    "title": "推荐UP主🥰",
+    "websites": [
+      {
+        "title": "李自然说",
+        "desc": "有趣的灵魂 聊科技人文",
+        "src": "http://i2.hdslb.com/bfs/face/11957467e128e4dbb05e2f645855caabee8f611c.jpg_64x64.jpg",
+        "href": "https://space.bilibili.com/39089748"
+      },
+      {
+        "title": "智能路障",
+        "desc": "闲聊、科普",
+        "src": "http://i2.hdslb.com/bfs/face/f56a6aef4271593a451f3545dc00af3549868939.jpg_64x64.jpg",
+        "href": "https://space.bilibili.com/79577853"
+      },
+      {
+        "title": "巫师财经",
+        "desc": "经济、资本战争",
+        "src": "http://i0.hdslb.com/bfs/face/c518dc95663850d075a90897de617cc634151f7a.jpg_64x64.jpg",
+        "href": "https://space.bilibili.com/472747194"
+      }
+    ]
   },
   {
     "title": "设计🦁️",
@@ -32,7 +57,7 @@
     ]
   },
   {
-    "title": "ACG",
+    "title": "ACG👹",
     "websites": [
       {
         "title": "漫画柜",
