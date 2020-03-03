@@ -14,7 +14,7 @@ export default {
     htmlSuffix: true,
     dynamicRoot: true,
   },
-  outputPath: './docs',
+  outputPath: './dist',
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
