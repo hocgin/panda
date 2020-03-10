@@ -15,18 +15,21 @@ export default class API {
     });
   }
 
-  static getAutocomplete(payload) {
-    let queryStr = stringify(payload);
+  static getAutocomplete({ q, ...payload }) {
+    let queryStr = stringify({
+      prod: 'pc',
+      wd: q,
+    });
+    let url = `https://www.baidu.com/sugrec?${queryStr}`;
     return new Promise((resolve, reject) => {
-      jsonp(`https://duckduckgo.com/ac/?${queryStr}`, {
-        param: 'callback',
+      jsonp(url, {
+        param: 'cb',
         name: 'autocompleteCallback',
       }, (err, data) => {
         if (!!err) {
-          console.error('[请求出现异常]', err);
           resolve([]);
         } else {
-          resolve(data);
+          resolve((data.g || []).map(({ q }) => q));
         }
       });
     }).then((response) => {

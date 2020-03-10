@@ -3,6 +3,12 @@ import classnames from 'classnames';
 import { HeartFilled } from '@ant-design/icons';
 
 function BasicLayout(props) {
+  window.console.log = (...args) => {
+    // ..
+  };
+  window.console.debug = (...args) => {
+    // ..
+  };
   return (
     <div className={styles.wrapper}>
       {/*<div className={styles.top}>Yay! Welcome to umi!</div>*/}

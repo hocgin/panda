@@ -34,12 +34,12 @@ class Index extends React.PureComponent {
                  className={styles.input}/>
           <div className={styles.btns}>
             <input type="button" className={classnames(styles.clean)} value="X" onClick={this.onClickClean}/>
-            <button type="submit" className={styles.submit} onClick={this.onClickSearch}><SearchOutlined /></button>
+            <button type="submit" className={styles.submit} onClick={this.onClickSearch}><SearchOutlined/></button>
           </div>
           <div className={classnames(styles.autocomplete, {
             [styles.show]: hasAutocomplete,
           })}>
-            {(autocomplete).map(({ phrase }, index) =>
+            {(autocomplete).map((phrase, index) =>
               (<div key={index} className={styles.autocompleteItem}
                     onClick={that.onClickAutocomplete.bind(that, phrase)}>{phrase}</div>),
             )}
