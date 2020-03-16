@@ -5,4 +5,3 @@
 
 ## 截图
 <img src="./docs/pc-website.png" width="800" alt="图片"/>
-<img src="./docs/mobile-website.jpeg" width="200" alt="图片"/>
