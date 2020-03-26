@@ -31,6 +31,18 @@
     "title": "设计🦁️",
     "websites": [
       {
+        "title": "Shopify",
+        "desc": "免费、LOGO设计",
+        "src": "https://cdn.shopify.com/shopifycloud/hatchful-web/assets/0079f3ae8b76c255980f84026ec74f47.svg",
+        "href": "https://hatchful.shopify.com/"
+      },
+      {
+        "title": "Pixabay",
+        "desc": "图库",
+        "src": "https://pixabay.com/safari-pinned-tab.svg",
+        "href": "https://pixabay.com/"
+      },
+      {
         "title": "Dribbble",
         "desc": "搜索引擎",
         "src": "https://cdn.dribbble.com/assets/favicon-63b2904a073c89b52b19aa08cebc16a154bcf83fee8ecc6439968b1e6db569c7.ico",
