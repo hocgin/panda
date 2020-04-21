@@ -1,5 +1,6 @@
 // ref: https://umijs.org/config/
 export default {
+  title: '熊猫导航',
   routes: [
     {
       path: '/',
