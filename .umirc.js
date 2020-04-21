@@ -1,6 +1,5 @@
 // ref: https://umijs.org/config/
 export default {
-  treeShaking: true,
   routes: [
     {
       path: '/',
@@ -15,29 +14,7 @@ export default {
     dynamicRoot: true,
   },
   outputPath: './dist',
-  plugins: [
-    // ref: https://umijs.org/plugin/umi-plugin-react.html
-    ['umi-plugin-react', {
-      antd: true,
-      dva: true,
-      dynamicImport: false,
-      title: 'Panda',
-      dll: false,
-
-      routes: {
-        exclude: [
-          /models\//,
-          /services\//,
-          /model\.(t|j)sx?$/,
-          /service\.(t|j)sx?$/,
-          /components\//,
-        ],
-      },
-    }],
-  ],
-  copy: [{
-    from: 'CNAME',
-    to: 'CNAME',
-    toType: 'file',
-  }],
+  dva: {},
+  antd: {},
+  copy: ['CNAME'],
 };
