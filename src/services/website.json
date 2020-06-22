@@ -80,6 +80,29 @@
     ]
   },
   {
+    "title": "社区🏘",
+    "websites": [
+      {
+        "title": "Tonymacx86",
+        "desc": "黑苹果社区",
+        "src": "https://www.tonymacx86.com/images/tonymacx86-logo.png",
+        "href": "https://www.tonymacx86.com/"
+      },
+      {
+        "title": "MacRumors",
+        "desc": "Apple 周边信息",
+        "src": "https://images.macrumors.com/images-new/apple-touch-icon.png?v=01",
+        "href": "https://www.macrumors.com/"
+      },
+      {
+        "title": "V2EX",
+        "desc": "V2EX 社区",
+        "src": "https://www.v2ex.com/static/img/icon_rayps_64.png",
+        "href": "https://www.v2ex.com/"
+      }
+    ]
+  },
+  {
     "title": "工具🔧️",
     "websites": [
       {
@@ -111,12 +134,6 @@
         "desc": "Youtuber 营收分析",
         "src": "https://socialblade.com/images/share-badge.png",
         "href": "https://socialblade.com"
-      },
-      {
-        "title": "Tonymacx86",
-        "desc": "黑苹果社区",
-        "src": "https://www.tonymacx86.com/images/tonymacx86-logo.png",
-        "href": "https://www.tonymacx86.com/"
       },
       {
         "title": "识字体",
