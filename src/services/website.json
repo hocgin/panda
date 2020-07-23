@@ -136,6 +136,12 @@
         "href": "https://socialblade.com"
       },
       {
+        "title": "Yout",
+        "desc": "Youtube 视频/音频下载",
+        "src": "https://yout.com/static/images/Youty.png",
+        "href": "https://yout.com/"
+      },
+      {
         "title": "识字体",
         "desc": "识别图片所使用的字体",
         "src": "https://www.likefont.com/favicon.ico",
