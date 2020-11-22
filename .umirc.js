@@ -19,6 +19,6 @@ export default {
     antd: {},
     copy: ['CNAME'],
     analytics: {
-        baidu: '41d7f44870aac3490f3d497fc9af7485',
+        baidu: 'ea74cfe1769e440fd33ddda0da97d5ec',
     },
 };
