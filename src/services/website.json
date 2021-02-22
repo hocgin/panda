@@ -13,6 +13,18 @@
                 "desc": "音频、听书、学习",
                 "src": "https://piccdn2.umiwi.com/fe-oss/default/MTU5MTI2NDU0MDcw.png",
                 "href": "https://www.biji.com/"
+            },
+            {
+                "title": "力扣",
+                "desc": "刷算法吧！渣渣",
+                "src": "https://static.leetcode-cn.com/cn-mono-assets/production/assets/logo-dark-cn.c42314a8.svg",
+                "href": "https://leetcode-cn.com/"
+            },
+            {
+                "title": "牛客网",
+                "desc": "刷算法吧！渣渣",
+                "src": "https://static.nowcoder.com/images/logo_87_87.png",
+                "href": "https://www.nowcoder.com/"
             }
         ]
     },
