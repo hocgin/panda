@@ -4,12 +4,12 @@ import GinFooter from '@hocgin/gin-footer'
 import React from "react";
 
 function BasicLayout(props) {
-    window.console.log = (...args) => {
-        // ..
-    };
-    window.console.debug = (...args) => {
-        // ..
-    };
+    // window.console.log = (...args) => {
+    //     // ..
+    // };
+    // window.console.debug = (...args) => {
+    //     // ..
+    // };
     return (
         <div className={styles.wrapper}>
             <GinEggs/>
