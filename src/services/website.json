@@ -111,6 +111,12 @@
                 "desc": "V2EX 社区",
                 "src": "https://www.v2ex.com/static/img/icon_rayps_64.png",
                 "href": "https://www.v2ex.com/"
+            },
+            {
+                "title": "GITCOIN",
+                "desc": "GITCOIN",
+                "src": "https://s.gitcoin.co/static/v2/images/favicon.ico/favicon-32x32.a507b9bfeba8.png",
+                "href": "https://gitcoin.co/"
             }
         ]
     },
