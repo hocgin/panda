@@ -1,6 +1,6 @@
 const CACHE_NAME = 'fed-cache';
-this.addEventListener('install', function (event) {
-    this.skipWaiting();
+self.addEventListener('install', function (event) {
+    self.skipWaiting();
     console.log("install service worker");
     // 创建和打开一个缓存库
     caches.open(CACHE_NAME);
@@ -13,3 +13,6 @@ this.addEventListener('install', function (event) {
         })
     );
 });
+self.addEventListener('fetch', (evt) => {
+    console.log('sw fetch() 发送的请求', evt.request.url)
+})

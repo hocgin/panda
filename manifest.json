@@ -3,8 +3,6 @@
     "short_name": "熊猫导航",
     "display": "standalone",
     "start_url": "/index.html",
-    "theme_color": "#fff",
-    "background_color": "#fff",
     "icons": [
         {
             "src": "logo_256.png",
@@ -16,6 +14,5 @@
             "sizes": "128x128",
             "type": "image/png"
         }
-    ],
-    "scope": "/"
+    ]
 }
