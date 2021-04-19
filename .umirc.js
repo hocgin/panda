@@ -20,6 +20,7 @@ export default {
     copy: ['CNAME',
         'logo_128.png',
         'logo_256.png',
+        'sw.js',
         'manifest.json'],
     analytics: {
         baidu: 'ea74cfe1769e440fd33ddda0da97d5ec',
