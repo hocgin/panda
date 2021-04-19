@@ -17,7 +17,10 @@ export default {
     outputPath: './dist',
     dva: {},
     antd: {},
-    copy: ['CNAME', 'logo_256.png', 'manifest.json'],
+    copy: ['CNAME',
+        'logo_128.png',
+        'logo_256.png',
+        'manifest.json'],
     analytics: {
         baidu: 'ea74cfe1769e440fd33ddda0da97d5ec',
     },
