@@ -2,8 +2,24 @@
     "name": "熊猫导航",
     "short_name": "熊猫导航",
     "display": "standalone",
-    "start_url": "/index.html",
+    "mode": "fullscreen",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "start_url": "https://panda.hocg.in",
+    "scope": "/",
     "icons": [
+        {
+            "src": "logo_256.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "logo_128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
         {
             "src": "logo_256.png",
             "sizes": "256x256",
