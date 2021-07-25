@@ -1,6 +1,5 @@
 import styles from './index.less';
-import GinEggs from '@hocgin/gin-eggs';
-import GinFooter from '@hocgin/gin-footer'
+import {Eggs as GinEggs, Footer as GinFooter} from '@hocgin/ui';
 import React from "react";
 
 function BasicLayout(props) {
