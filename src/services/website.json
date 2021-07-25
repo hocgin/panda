@@ -25,6 +25,12 @@
                 "desc": "刷算法吧！渣渣",
                 "src": "https://static.nowcoder.com/images/logo_87_87.png",
                 "href": "https://www.nowcoder.com/"
+            },
+            {
+                "title": "Baeldung",
+                "desc": "Java 编程",
+                "src": "https://www.baeldung.com/wp-content/themes/baeldung/favicon/favicon.ico",
+                "href": "https://www.baeldung.com/"
             }
         ]
     },
