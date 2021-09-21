@@ -1,0 +1,1 @@
+const CACHE_NAME="fed-cache";self.addEventListener("install",(function(e){self.skipWaiting(),console.log("install service worker"),caches.open(CACHE_NAME);let n=["https://panda.hocg.in"];e.waitUntil(caches.open(CACHE_NAME).then((e=>{e.addAll(n)})))})),self.addEventListener("fetch",(e=>{console.log("sw fetch() \u53d1\u9001\u7684\u8bf7\u6c42",e.request.url)}));
