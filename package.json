@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@hocgin/ui": "^4.0.40",
-    "antd": "^4.0.0",
+    "antd": "^4.17.2",
     "classnames": "^2.2.6",
     "dva": "^2.6.0-beta.6",
     "hash.js": "latest",
@@ -37,7 +37,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
     "react-test-renderer": "^16.7.0",
-    "umi": "^3"
+    "umi": "^3.5.20"
   },
   "lint-staged": {
     "*.{js,jsx}": [
