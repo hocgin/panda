@@ -3,12 +3,13 @@
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
+    "build:cdn": "UMI_ENV=prod.cdn umi build",
     "test": "umi test",
     "lint": "eslint --ext .js src mock tests",
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@hocgin/ui": "^4.0.3",
+    "@hocgin/ui": "^4.0.40",
     "antd": "^4.0.0",
     "classnames": "^2.2.6",
     "dva": "^2.6.0-beta.6",
