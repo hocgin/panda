@@ -34,3 +34,4 @@ jobs:
           dest_dir: ${{github.event.repository.name}}
           ignore_source_map: true
           exclude: "index.html"
+          overwrite: true
