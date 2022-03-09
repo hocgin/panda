@@ -200,6 +200,12 @@
                 "desc": "手绘视频创作",
                 "src": "https://www.videoscribe.co/favicon/vs/favicon-96x96.png",
                 "href": "https://www.videoscribe.co"
+            },
+            {
+                "title": "Shields",
+                "desc": "徽章",
+                "src": "https://www.videoscribe.co/favicon/vs/favicon-96x96.png",
+                "href": "https://shields.io"
             }
         ]
     }
