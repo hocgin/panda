@@ -36,4 +36,15 @@ export default {
         'https://gw.alipayobjects.com/os/lib/react/16.8.6/umd/react.production.min.js',
         'https://gw.alipayobjects.com/os/lib/react-dom/16.8.6/umd/react-dom.production.min.js',
     ],
+    extraBabelPlugins: [
+        [
+            'import',
+            {
+                libraryName: '@hocgin/ui',
+                camel2DashComponentName: false,
+                style: true,
+            },
+            '@hocgin/ui',
+        ],
+    ],
 };

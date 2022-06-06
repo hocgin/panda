@@ -208,5 +208,40 @@
                 "href": "https://shields.io"
             }
         ]
+    },
+    {
+        "title": "iOS 开发",
+        "websites": [
+            {
+                "title": "Fucking SwiftUI",
+                "desc": "从 UIKit 兼容 SwiftUI",
+                "src": "https://fuckingswiftui.com/twitter-card.png",
+                "href": "https://fuckingswiftui.com/"
+            },
+            {
+                "title": "Human Interface Guidelines",
+                "desc": "Apple UI 风格设计",
+                "src": "https://developer.apple.com/favicon.ico",
+                "href": "https://developer.apple.com/design/human-interface-guidelines/"
+            },
+            {
+                "title": "Hacking with Swift",
+                "desc": "学习 Swift / SwiftUI",
+                "src": "https://www.hackingwithswift.com/apple-icon-57x57.png",
+                "href": "https://www.hackingwithswift.com/"
+            },
+            {
+                "title": "Hacking with Swift",
+                "desc": "学习 Swift / SwiftUI",
+                "src": "https://www.hackingwithswift.com/apple-icon-57x57.png",
+                "href": "https://www.hackingwithswift.com/"
+            },
+            {
+                "title": "Design+Code",
+                "desc": "Swift 实战项目",
+                "src": "https://designcode.io/favicon-32x32.png?v=42a278c0c94e914295c7dd0eddf50492",
+                "href": "https://designcode.io/"
+            }
+        ]
     }
 ]
