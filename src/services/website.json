@@ -231,10 +231,16 @@
                 "href": "https://www.hackingwithswift.com/"
             },
             {
-                "title": "Hacking with Swift",
+                "title": "Swift By Sundell",
                 "desc": "学习 Swift / SwiftUI",
-                "src": "https://www.hackingwithswift.com/apple-icon-57x57.png",
-                "href": "https://www.hackingwithswift.com/"
+                "src": "https://www.swiftbysundell.com/images/favicon.png",
+                "href": "https://www.swiftbysundell.com/"
+            },
+            {
+                "title": "肘子的 Swift 记事本",
+                "desc": "Swift 深入",
+                "src": "https://www.fatbobman.com/images/favicon.png",
+                "href": "https://www.fatbobman.com/"
             },
             {
                 "title": "Design+Code",
