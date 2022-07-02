@@ -101,6 +101,18 @@
                 "desc": "简单漂亮的开源图标",
                 "src": "https://feathericons.com/favicon-32x32.png",
                 "href": "https://feathericons.com"
+            },
+            {
+                "title": "MasterGo",
+                "desc": "界面设计",
+                "src": "https://mastergo.com/favicon.ico",
+                "href": "https://mastergo.com"
+            },
+            {
+                "title": "Rive",
+                "desc": "动画设计",
+                "src": "https://rive.app/favicon.ico",
+                "href": "https://rive.app/"
             }
         ]
     },
