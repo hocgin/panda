@@ -259,6 +259,12 @@
                 "desc": "Swift 实战项目",
                 "src": "https://designcode.io/favicon-32x32.png?v=42a278c0c94e914295c7dd0eddf50492",
                 "href": "https://designcode.io/"
+            },
+            {
+                "title": "Swift with Majid",
+                "desc": "Swift 技术博客",
+                "src": "https://swiftwithmajid.com/public/favicon.ico",
+                "href": "https://swiftwithmajid.com/"
             }
         ]
     }
