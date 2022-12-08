@@ -1,20 +1,9 @@
-import request from '@/utils/request';
 import website from '@/services/website';
 import searchEngine from '@/services/search-engine';
 import jsonp from 'jsonp';
 import { stringify } from 'qs';
 
 export default class API {
-
-  static worked(payload) {
-    return request(`/worked`, {
-      method: 'GET',
-      body: {
-        ...payload,
-      },
-    });
-  }
-
   static getAutocomplete({ q, ...payload }) {
     let queryStr = stringify({
       prod: 'pc',

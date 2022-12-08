@@ -1,5 +1,4 @@
 import API from '@/services/api';
-import Log from '@/utils/log';
 import Util from '@/utils/util';
 
 export default {
@@ -66,7 +65,7 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, search }) => {
-        Log.debug('当前访问的 URL = ', pathname);
+        console.debug('当前访问的 URL = ', pathname);
         switch (pathname) {
           case '/':
           default: {
