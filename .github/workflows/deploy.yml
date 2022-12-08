@@ -13,21 +13,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Actions
-      uses: actions/checkout@v2
+      - name: Checkout Actions
+        uses: actions/checkout@v2
+      - name: Install yarn dependencies
+        run: yarn
+      - name: Push
+        uses: JamesIves/github-pages-deploy-action@releases/v2
+        env:
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: dist
+          BUILD_SCRIPT: npm run build:cdn
+          NODE_OPTIONS: '--max_old_space_size=4096'
 
-    - name: Push
-      uses: JamesIves/github-pages-deploy-action@releases/v2
-      env:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: dist
-        BUILD_SCRIPT: npm install && npm run build:cdn
-        NODE_OPTIONS: '--max_old_space_size=4096'
-
-    - uses: hocgin/action-qiniu-upload@master
-      with:
+      - uses: hocgin/action-qiniu-upload@master
+        with:
           access_key: ${{ secrets.QINIU_ACCESS_KEY }}
           secret_key: ${{ secrets.QINIU_SECRET_KEY }}
           bucket: ${{ secrets.QINIU_BUCKET }}
