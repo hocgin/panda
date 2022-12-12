@@ -5,8 +5,8 @@ import Img from 'react-image';
 
 class Index extends React.PureComponent {
   render() {
-    let { title, src, desc, href } = this.props;
-    return (<div className={styles.component} onClick={this.openUrl.bind(this, { title, src, desc, href })}>
+    let {title, src, desc, href} = this.props;
+    return (<div className={styles.component} onClick={this.openUrl.bind(this, {title, src, desc, href})}>
       <div className={styles.imageWrapper}>
         <Img className={styles.image}
              unloader={this.renderUnloader()}
@@ -21,7 +21,7 @@ class Index extends React.PureComponent {
   }
 
   openUrl = (item) => {
-    let { href } = item;
+    let {href} = item;
     if (!href) {
       return;
     }

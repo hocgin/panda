@@ -5,6 +5,7 @@
   flex-direction: row;
   padding: 15px 10px;
   cursor: pointer;
+  align-items: center;
   background-color: #F7F7F7;
   .dark({
     background-color: @dark2ndBackgroundColor;
@@ -36,10 +37,15 @@
 
 .imageWrapper {
   margin-right: 8px;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, .5);
+  width: 45px;
+  height: 45px;
+
 
   .image {
     width: 45px;
@@ -47,6 +53,7 @@
     border-radius: 50%;
     background-color: #fff;
     overflow: hidden;
+    object-fit: contain;
   }
 }
 
@@ -55,11 +62,14 @@
   text-align: left;
   flex-direction: column;
   justify-content: space-around;
+  overflow: hidden;
+  flex: 1;
 
   .title {
     font-size: 16px;
     font-weight: 400;
     color: rgba(48, 54, 89, 0.9);
+    .oneLine();
     .dark({
       color: #A4A5A6
     })
@@ -68,5 +78,6 @@
   .desc {
     color: rgba(136, 142, 162, 0.96);
     font-size: 12px;
+    .oneLine();
   }
 }
