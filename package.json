@@ -5,8 +5,7 @@
     "build": "umi build",
     "build:cdn": "UMI_ENV=prod.cdn umi build",
     "test": "umi test",
-    "lint": "eslint --ext .js src mock tests",
-    "precommit": "lint-staged"
+    "lint": "eslint --ext .js src mock tests"
   },
   "dependencies": {
     "@hocgin/ui": "^4.0.42",
