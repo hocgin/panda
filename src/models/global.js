@@ -65,7 +65,7 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, search }) => {
-        console.debug('当前访问的 URL = ', pathname);
+        // console.debug('当前访问的 URL = ', pathname);
         switch (pathname) {
           case '/':
           default: {

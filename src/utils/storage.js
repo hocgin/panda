@@ -42,13 +42,13 @@ export default class Storage {
     if (value === null || value === undefined) {
       return;
     }
-    console.debug('[Storage]SET:', key, value);
+    // console.debug('[Storage]SET:', key, value);
     localStorage.setItem(key, value);
   }
 
   static getItem(key) {
     let result = localStorage.getItem(key);
-    console.debug('[Storage]GET:', key, result);
+    // console.debug('[Storage]GET:', key, result);
     return result;
   }
 
