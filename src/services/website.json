@@ -177,6 +177,12 @@
     "title": "工具🔧️",
     "websites": [
       {
+        "title": "帮小忙",
+        "desc": "腾讯在线工具箱",
+        "src": "/website.qbtool-logo-new.png",
+        "href": "https://tool.browser.qq.com/"
+      },
+      {
         "title": "语雀",
         "desc": "云上笔记",
         "src": "/website.yuque.png",
