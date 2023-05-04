@@ -28,14 +28,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-
-      - uses: hocgin/action-qiniu-upload@master
-        with:
-          access_key: ${{ secrets.QINIU_ACCESS_KEY }}
-          secret_key: ${{ secrets.QINIU_SECRET_KEY }}
-          bucket: ${{ secrets.QINIU_BUCKET }}
-          source_dir: 'dist'
-          dest_dir: ${{github.event.repository.name}}
-          ignore_source_map: true
-          exclude: "index.html"
-          overwrite: true
