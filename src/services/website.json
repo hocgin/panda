@@ -91,12 +91,6 @@
         "href": "https://www.dribbble.com"
       },
       {
-        "title": "Easyicon",
-        "desc": "图片搜索引擎",
-        "src": "/website.easyicon.png",
-        "href": "https://www.easyicon.net"
-      },
-      {
         "title": "Feather",
         "desc": "简单漂亮的开源图标",
         "src": "/website.fathericons.png",
@@ -132,10 +126,10 @@
         "href": "https://www.manhuagui.com/"
       },
       {
-        "title": "OmoFun",
+        "title": "AGE动漫",
         "desc": "动漫",
-        "src": "/website.omofun.png",
-        "href": "https://omofun.tv/"
+        "src": "https://www.agedm.org/favicon.ico",
+        "href": "https://age.tv/"
       }
     ]
   },
