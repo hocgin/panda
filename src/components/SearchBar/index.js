@@ -105,7 +105,7 @@ class Index extends React.PureComponent {
         }
         let searchEngineUrl = searchEngine[active]?.url;
         let url = `${searchEngineUrl}`.replace(`$\{query\}`, query);
-        window.location.replace(`${url}`);
+        window.open(`${url}`, '_self');
     };
 }
 
